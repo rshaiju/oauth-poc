@@ -24,6 +24,8 @@ namespace some_api
 
             app.UseHttpsRedirection();
 
+            app.UseCors(x=>x.AllowAnyOrigin());
+
             app.UseAuthorization();
 
 
