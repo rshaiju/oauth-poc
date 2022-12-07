@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace some_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize(AuthenticationSchemes = Consts.MY_AAD_SCHEME, Policy = Consts.MY_POLICY_ALL_IDP)]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
